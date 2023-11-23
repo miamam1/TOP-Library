@@ -47,9 +47,7 @@ function displayBooks() {
         pages.classList.add("pages")
         pages.textContent = myLibrary[i].pages
        
-        const read = document.createElement("p")
-        read.classList.add("read")
-        read.textContent = myLibrary[i].read
+        
 
         const remove = document.createElement("button")
         remove.classList.add("remove")
@@ -61,13 +59,15 @@ function displayBooks() {
         })
 
         const cardRead = document.createElement("button")
-        cardRead.textContent = "Complete?"
+        cardRead.textContent = myLibrary[i].read
+        
         cardRead.classList.add("cardRead")
         cardRead.onclick = function() {
-            if(read.textContent == "Read") {
-                read.textContent = "Not read"
+            if(cardRead.textContent == "Read") {
+                cardRead.textContent = "Not read"
+                
             } else {
-                read.textContent = "Read"
+                cardRead.textContent = "Read"
             }
         }
        
@@ -77,7 +77,7 @@ function displayBooks() {
         book.appendChild(title)
         book.appendChild(author)
         book.appendChild(pages)
-        book.appendChild(read)
+        
         book.appendChild(cardRead)
         book.appendChild(remove)
         booksContainer.appendChild(book)    
@@ -115,10 +115,19 @@ confirmBtn.addEventListener('click', () => {
          readCheck.textContent = "Not read"
     }
     if(formTitle.value === "" ||   formAuthor.value === "" || formPages.value === "" ) {
+        
         formTitle.style.border = "1px solid red"
         formAuthor.style.border = "1px solid red"
         formPages.style.border = "1px solid red"
-        
+        if(formTitle.value !== "") {
+            formTitle.style.border = "1px solid black"
+        }
+        if(formAuthor.value !== "") {
+            formAuthor.style.border = "1px solid black"
+        }
+        if(formPages.value !== "") {
+            formPages.style.border = "1px solid black"
+        }
 
     } else {
         dialog.close(addToLibrary(formTitle.value, formAuthor.value, formPages.value, readCheck.textContent))

@@ -14,7 +14,7 @@ body {
 }
 
 /* https://getcssscan.com/css-buttons-examples not mine! , button 59 */
-.navBar button, .submitBtn {
+button {
   align-items: center;
   background-color: #fff;
   border: 2px solid #000;
@@ -98,12 +98,14 @@ button:focus  {
 }
 
 .card {
-    width: 10%;
+    width: 250px;
+    max-width: 250px;
     border: 2px solid black;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
+    
+    
 }
 
 
@@ -113,6 +115,12 @@ button:focus  {
     gap: 20px;
     padding: 30px;
     
+}
+
+.title {
+  border-bottom: 2px dotted black;
+  position: relative;
+  top: 20px;
 }
 
 .dialogContainer h2 {
@@ -126,7 +134,7 @@ button:focus  {
 }
 
 .cardRead {
-  min-width: 0;
+  
   cursor:pointer
 
 }
@@ -140,7 +148,7 @@ button:focus  {
    background-image: url(images/close.svg);
    background-repeat: no-repeat;
    position: relative;
-   bottom: 207px;
+   bottom: 185px;
    left: 100px;
    cursor:pointer
    
