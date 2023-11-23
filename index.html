@@ -5,18 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
 </head>
 <body>
     <div class="navBar">
         <h1>Library App</h1>
         <dialog>
-            <p>Kys</p>
+            <div class="dialogContainer">
+            <h2>New book</h2>
+            <input id="formTitle" placeholder="Title..." type="text" required> 
+            <input id="formAuthor" placeholder="Author..." type="text">
+            <input id="formPages" placeholder="Pages..." type="number">
+            <div class="checkContainer">
+            <input  type="checkbox" name="readCheck" id="readCheck">
+            <label for="readCheck">Read?</label>
+            </div>
+            <button id="confirmBtn" value="default" >Add</button>
+            <button id="closeForm">Close</button>
+            </div>
         </dialog>
-        <button>New book</button>
+        <button id="addBook"> + Add book</button>
     </div>
-    
+    <div id="booksContainer"></div>
 
-    
+
+<script src="script.js"></script>
 </body>
 </html>

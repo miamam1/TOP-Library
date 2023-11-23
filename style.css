@@ -1,6 +1,7 @@
 body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+    
 }
 
 
@@ -8,12 +9,12 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 2.3px solid black;
 
 }
 
-
-.navBar button {
+/* https://getcssscan.com/css-buttons-examples not mine! , button 59 */
+.navBar button, .submitBtn {
   align-items: center;
   background-color: #fff;
   border: 2px solid #000;
@@ -40,26 +41,107 @@ body {
   touch-action: manipulation;
 }
 
-button:focus {
+button:focus  {
   color: #171e29;
 }
 
-button:hover {
+  button:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+  }
+  
+  button:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+  }
+
+.submitBtn:hover {
   border-color: #06f;
   color: #06f;
   fill: #06f;
 }
 
-button:active {
+.submitBtn:active {
   border-color: #06f;
   color: #06f;
   fill: #06f;
 }
+
+
+.submitBtn:focus  {
+    color: #171e29;
+  }
+  
 
 @media (min-width: 768px) {
    button {
     min-width: 170px;
   }
+  .submitBtn{
+    min-width: 170px;
+  }
 }
   
 
+#booksContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+
+    
+    
+}
+
+.card {
+    width: 10%;
+    border: 2px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dialogContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    
+}
+
+.dialogContainer h2 {
+    text-align: center;
+}
+
+.checkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardRead {
+  min-width: 0;
+  cursor:pointer
+
+}
+
+.remove {
+   min-width: 0;
+   background: none;
+   border: none;
+   width: 25px;
+   height: 25px;
+   background-image: url(images/close.svg);
+   background-repeat: no-repeat;
+   position: relative;
+   bottom: 207px;
+   left: 100px;
+   cursor:pointer
+   
+}
